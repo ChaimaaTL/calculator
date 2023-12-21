@@ -15,7 +15,7 @@ pipeline {
         
         stage("Couverture du code") {
             steps {
-            dir('home/clonecalculatore/calculator') {
+            sh "./gradlew wrapper --gradle-version=7.4"
                 sh "./gradlew jacocoTestReport"
                 
                 publishHTML(target: [
@@ -25,7 +25,6 @@ pipeline {
                 ])
                 
                 sh "./gradlew jacocoTestCoverageVerification"
-            }
             }
         }
         
