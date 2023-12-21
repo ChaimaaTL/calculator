@@ -29,7 +29,7 @@ pipeline {
         
         stage("Analyse statique du code") {
             steps {
-                sh "./gradlew checkstyleMain -Pcheckstyle.config=file:/home/chaimaatawil/clonecalculatore/calculator/config/checkstyle/checkstyle.xml"
+                sh "./gradlew checkstyleMain -Pcheckstyle.config=file:/home/clonecalculatore/calculator/config/checkstyle/checkstyle.xml"
                 
                 publishHTML(target: [
                     reportDir: 'build/reports/checkstyle/',
@@ -42,7 +42,7 @@ pipeline {
     post {
         always {
             mail to: 'chaimaa.tawil7@gmail.com',
-                 subject: "Cher lion, votre compilation est terminée: ${currentBuild.fullDisplayName}",
+                 subject: "Chere chaimaa, votre compilation est terminée: ${currentBuild.fullDisplayName}",
                  body: "Votre build est accompli. Veuillez vérifier: ${env.BUILD_URL}"
         }
     }
