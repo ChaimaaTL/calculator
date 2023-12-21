@@ -1,24 +1,51 @@
 pipeline {
     agent any
-    
     stages {
         stage("Compilation") {
             steps {
-                script {
-                    echo "Étape de compilation..."
-                    sh "./gradlew compileJava"
-                }
+                sh "./gradlew compileJava"
             }
         }
         
         stage("Test unitaire") {
             steps {
-                script {
-                    echo "Exécution des tests unitaires..."
-                    sh "./gradlew test"
-                }
+                sh "./gradlew test"
+            }
+        }
+        
+        stage("Couverture du code") {
+            steps {
+                sh "./gradlew jacocoTestReport"
+                
+                publishHTML(target: [
+                    reportDir: 'build/reports/jacoco/test/html',
+                    reportFiles: 'index.html',
+                    reportName: 'JaCoCo Report'
+                ])
+                
+                sh "./gradlew jacocoTestCoverageVerification"
+            }
+        }
+        
+        stage("Analyse statique du code") {
+            steps {
+                sh "./gradlew checkstyleMain -Pcheckstyle.config=file:/home/chaimaatawil/clonecalculatore/calculator/config/checkstyle/checkstyle.xml"
+                
+                publishHTML(target: [
+                    reportDir: 'build/reports/checkstyle/',
+                    reportFiles: 'main.html',
+                    reportName: 'Checkstyle Report'
+                ])
             }
         }
     }
+    post {
+        always {
+            mail to: 'chaimaa.tawil7@gmail.com',
+                 subject: "Cher lion, votre compilation est terminée: ${currentBuild.fullDisplayName}",
+                 body: "Votre build est accompli. Veuillez vérifier: ${env.BUILD_URL}"
+        }
+    }
 }
+
 
