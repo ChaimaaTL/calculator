@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tawil.calculator.CalculatorApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-08T08:54:26" hostname="tawiltech-pc" time="8.425">
+<testsuite name="com.tawil.calculator.CalculatorApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-21T22:07:54" hostname="tawiltech-pc" time="4.17">
   <properties/>
-  <testcase name="contextLoads()" classname="com.tawil.calculator.CalculatorApplicationTests" time="8.425"/>
-  <system-out><![CDATA[09:54:09.796 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.tawil.calculator.CalculatorApplicationTests]: CalculatorApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-09:54:11.207 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.tawil.calculator.CalculatorApplication for test class com.tawil.calculator.CalculatorApplicationTests
+  <testcase name="contextLoads()" classname="com.tawil.calculator.CalculatorApplicationTests" time="4.17"/>
+  <system-out><![CDATA[23:07:44.027 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.tawil.calculator.CalculatorApplicationTests]: CalculatorApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:07:44.656 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.tawil.calculator.CalculatorApplication for test class com.tawil.calculator.CalculatorApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,9 +13,9 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2023-12-08T09:54:16.868+01:00  INFO 155860 --- [    Test worker] c.t.c.CalculatorApplicationTests         : Starting CalculatorApplicationTests using Java 17.0.9 with PID 155860 (started by chaimaatawil in /home/chaimaatawil/clonecalculatore/calculator)
-2023-12-08T09:54:16.897+01:00  INFO 155860 --- [    Test worker] c.t.c.CalculatorApplicationTests         : No active profile set, falling back to 1 default profile: "default"
-2023-12-08T09:54:26.177+01:00  INFO 155860 --- [    Test worker] c.t.c.CalculatorApplicationTests         : Started CalculatorApplicationTests in 11.514 seconds (process running for 24.679)
+2023-12-21T23:07:46.876+01:00  INFO 188686 --- [    Test worker] c.t.c.CalculatorApplicationTests         : Starting CalculatorApplicationTests using Java 17.0.9 with PID 188686 (started by chaimaatawil in /home/chaimaatawil/clonecalculatore/calculator)
+2023-12-21T23:07:46.888+01:00  INFO 188686 --- [    Test worker] c.t.c.CalculatorApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2023-12-21T23:07:54.601+01:00  INFO 188686 --- [    Test worker] c.t.c.CalculatorApplicationTests         : Started CalculatorApplicationTests in 9.214 seconds (process running for 16.34)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

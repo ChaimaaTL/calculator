@@ -15,6 +15,7 @@ pipeline {
         
         stage("Couverture du code") {
             steps {
+            script{
                 sh "./gradlew jacocoTestReport"
                 
                 publishHTML(target: [
@@ -24,6 +25,7 @@ pipeline {
                 ])
                 
                 sh "./gradlew jacocoTestCoverageVerification"
+            }
             }
         }
         
