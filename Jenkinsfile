@@ -15,7 +15,7 @@ pipeline {
         
         stage("Couverture du code") {
             steps {
-            script{
+            dir('home/clonecalculatore/calculator') {
                 sh "./gradlew jacocoTestReport"
                 
                 publishHTML(target: [
