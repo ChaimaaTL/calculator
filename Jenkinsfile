@@ -15,7 +15,6 @@ pipeline {
         
         stage("Couverture du code") {
             steps {
-            sh "./gradlew wrapper --gradle-version=7.4"
                 sh "./gradlew jacocoTestReport"
                 
                 publishHTML(target: [
